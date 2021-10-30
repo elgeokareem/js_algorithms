@@ -61,7 +61,6 @@ function sameReloaded(arr1, arr2) {
   }
 
   const tiempoFinal = new Date();
-  console.log("tiempo 2", tiempoFinal-tiempoInicial)
   return true;
 
   // return [frecuencyCounter1, frecuencyCounter2]
