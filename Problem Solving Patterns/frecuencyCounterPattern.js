@@ -5,11 +5,10 @@
  */
 
 // array 1 es normal
-// array 2 es elevado al cuadrado
+// array 2 es elevado al cuadrado no importa el orden
 
 // Naive way -> forma facil pero con doble loop
 function same(arr1, arr2) {
-  const tiempoInicial = new Date();
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -24,12 +23,8 @@ function same(arr1, arr2) {
     arr2.splice(indexMatch, 1);
   }
 
-  const tiempoFinal = new Date();
-  console.log("tiempo 1", tiempoFinal-tiempoInicial)
   return true;
 }
-
-console.log("forma facil", same([1,2,3], [4,1,9]));
 
 function sameReloaded(arr1, arr2) {
   /**
@@ -39,7 +34,6 @@ function sameReloaded(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
-  const tiempoInicial = new Date();
 
   const frecuencyCounter1 = {};
   const frecuencyCounter2 = {};
@@ -60,10 +54,7 @@ function sameReloaded(arr1, arr2) {
     }
   }
 
-  const tiempoFinal = new Date();
   return true;
-
-  // return [frecuencyCounter1, frecuencyCounter2]
 }
 
-console.log("NEW METHOD", sameReloaded([1,2,3], [4,1,9]));
+console.log("NEW METHOD", same([1,2,3], [4,1,9]));
